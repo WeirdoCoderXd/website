@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact - My Love for Aleayah</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact">
+      <h1>Contact Me</h1>
+      <p>If you ever need me, I’m always here for you. Ray</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Love for Aleayah. All rights reserved.</p>
+  </footer>
+
+  <div class="heart-container"></div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      document.querySelector(".heart-container").appendChild(heart);
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      heart.style.width = "30px";  // Увеличенные сердечки
+      heart.style.height = "30px";
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    
+    setInterval(createHeart, 400); // Больше сердечек
+  </script>
+</body>
+</html>

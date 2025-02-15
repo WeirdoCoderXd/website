@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Love for Aleayah</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>My Love for Aleayah</h1>
+      <h2>A journey of love, memories, and devotion.</h2>
+      <p>From the moment I met you, my heart knew that you were special. Every day with you is a blessing, and I cherish every second we spend together.</p>
+      <blockquote>"You are my today and all of my tomorrows." – Leo Christopher</blockquote>
+      <a href="messages.html" class="btn">Send a Love Message</a>
+    </section>
+  </main>
+
+  <div class="heart-container"></div>
+
+  <footer>
+    <p>&copy; 2025 Love for Aleayah. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      document.querySelector(".heart-container").appendChild(heart);
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>

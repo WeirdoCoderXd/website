@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Messages - My Love for Aleayah</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    #message-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    #message-input {
+      width: 80%;
+      max-width: 500px;
+      padding: 10px;
+      border: 2px solid #ff7eb3;
+      border-radius: 20px;
+      font-size: 16px;
+      outline: none;
+      text-align: center;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: none;
+      background: linear-gradient(90deg, #ff758c, #ff7eb3);
+      color: white;
+      font-size: 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #ff5a7b, #ff4f8b);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="messages.html">Messages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="messages">
+      <h1>Love Messages(they don't work)</h1>
+      <div id="messages-list">
+        <p>You are my world, my everything. I cherish every moment with you.</p>
+        <p>Every day with you is a new adventure, and I cant wait for more.</p>
+      </div>
+      <form id="message-form">
+        <input type="text" id="message-input" placeholder="Write a message..." required>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Love for Aleayah. All rights reserved.</p>
+  </footer>
+
+  <div class="heart-container"></div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      document.querySelector(".heart-container").appendChild(heart);
+
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      heart.style.width = "30px";
+      heart.style.height = "30px";
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000);
+    }
+    
+    setInterval(createHeart, 400);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const messageForm = document.getElementById("message-form");
+      const messageInput = document.getElementById("message-input");
+      const messagesList = document.getElementById("messages-list");
+      
+      function loadMessages() {
+        const messages = JSON.parse(localStorage.getItem("messages")) || [];
+        messagesList.innerHTML = messages.map(msg => `<p>${msg}</p>`).join("");
+      }
+
+      messageForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const message = messageInput.value.trim();
+        if (message) {
+          const messages = JSON.parse(localStorage.getItem("messages")) || [];
+          messages.push(message);
+          localStorage.setItem("messages", JSON.stringify(messages));
+          messageInput.value = "";
+          loadMessages();
+        }
+      });
+
+      loadMessages();
+    });
+  </script>
+</body>
+</html>
