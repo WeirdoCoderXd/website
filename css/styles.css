@@ -1,68 +1,67 @@
 body {
     font-family: 'Roboto', sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #000000; /* Черный фон */
+    color: #ff0099; /* Яркий неоново-розовый для текста */
     margin: 0;
     padding: 0;
 }
-  
+
 header {
-    background: linear-gradient(90deg, #ff758c, #ff7eb3);
+    background: linear-gradient(90deg, #ff0099, #ff3399); /* Яркие розовые градиенты */
     padding: 20px;
     text-align: center;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
-  
+
 nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
 }
-  
+
 nav ul li {
     display: inline;
     margin: 0 20px;
 }
-  
+
 nav a {
     text-decoration: none;
-    color: white;
+    color: #ff0099; /* Яркий неоново-розовый для ссылок */
     font-weight: bold;
     font-size: 18px;
     transition: color 0.3s;
 }
-  
+
 nav a:hover {
-    color: #ffe5ec;
+    color: #ff66cc; /* Светлый розовый на ховер */
 }
-  
+
 .hero {
     background: url('../images/hero-bg.jpg') no-repeat center center/cover;
     padding: 120px 20px;
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
-  
+
 .hero h1 {
-    color: #c42d61; /* Темно-розовый */
+    color: #ff0099; /* Яркий розовый для заголовка */
 }
 
 .hero h2 {
-    color: #b02252; /* Еще темнее для контраста */
+    color: #ff3399; /* Яркий розовый для второго заголовка */
 }
 
 .hero p, blockquote {
-    color: #9e1e48; /* Глубокий розовый для основного текста */
+    color: #ff66cc; /* Светлый розовый для текста */
 }
 
-  
 section {
     padding: 40px 20px;
 }
-  
+
 .intro {
-    background: white;
+    background: #1a1a1a; /* Темный фон для секций */
     padding: 40px;
     margin: 20px auto;
     width: 80%;
@@ -70,9 +69,9 @@ section {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-  
+
 footer {
-    background: #ff758c;
+    background: #ff0099; /* Яркий неоново-розовый для футера */
     color: white;
     padding: 15px;
     margin-top: 20px;
@@ -98,7 +97,7 @@ footer {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #e73a77;
+    background-color: #ff0099; /* Яркий неоново-розовый цвет для сердечек */
     clip-path: polygon(50% 15%, 90% 0, 100% 30%, 50% 100%, 0 30%, 10% 0);
     opacity: 0.7;
     animation: falling-hearts linear infinite;
